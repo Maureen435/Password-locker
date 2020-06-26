@@ -11,5 +11,17 @@ from password import User,Credential
              self.assertEqual(self.new_user.user_password, "3245")
          def test_save_user(self):
              self.new_user.save_user()
-             self.assertEqual(len(User.uset_list),1)
+             self.assertEqual(len(User.user_list),1)
+         def test_save_multiple_user(self):
+             self.name_user.save_user()
+             test_user = user("Morin", "1234")
+             test_user.save_user()
+             self.assertEqual(len(User.user_list), 2)
+         def test_delete_user(self):
+             self.new_user.save_user()
+             test_user = user("Morin", "1234")
+             test_user.save_user()
+
+             self.new_user.delete_user()
+             self.assertEqual(len(User.user_list), 1)
     
