@@ -1,7 +1,7 @@
 import unittest
 from password import User,Credential
  
- class TestUser(unittest,TestCase):
+ class TestUser(unittest.TestCase):
      def setUp(self):
          self.new_user = user("Memzo","3245")
      def tearDown(self):
@@ -24,4 +24,18 @@ from password import User,Credential
 
              self.new_user.delete_user()
              self.assertEqual(len(User.user_list), 1)
+    
+ class TestCredential(unittest.TestCase):
+     def setUp(self):
+         self.new_credential = credential("facebook", "Babra", "12345")
+         def tearDown(self):
+             Credential.credential_list = []
+             def test_init(self):
+                 self.assertEqual(self.new_credential.account, "facebook")
+                 self.assertEqual(self.new_credential.account_username, "Babra")
+                 self.assertEqual(self.new_credential.account_password, "12345")
+             def test_save_credential(self):
+                 self.new_credential.save_credential()
+                 test_credential = credential("twitter", "Kemei", "0000")
+                 test_credential.save_credential()
     
