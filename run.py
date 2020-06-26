@@ -105,9 +105,11 @@ def main():
 
         elif short_code == "ex":
                         print("logged out")
-                        break
+                         #break
 
         else:
                         print("please check your entry")
-if _name_ == "_main_":
-    main()
+if __name__ == '__main__':
+    main() 
+#if _name_ == '_main_':
+ #   main()
