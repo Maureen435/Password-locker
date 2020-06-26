@@ -24,9 +24,14 @@ This is a projrct that enables clients to store and retrieve their credentials u
 Run ./run.py to launch the program
 
 ## Technologies Used
-   PYTHON
-   GIT
+   . PYTHON
+   . GIT
+
+## Support and details
+My technical Mentor is Slyvia Mbugua, and my email is mchepkemoi435@gmail.com
 
 ## License
-https://bit.ly/2B3irk7
+license under MIT license
+
+## 
 
