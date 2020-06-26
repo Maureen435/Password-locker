@@ -26,20 +26,26 @@ from password import User,Credential
              self.assertEqual(len(User.user_list), 1)
     
  class TestCredential(unittest.TestCase):
-     def setUp(self):
-         self.new_credential = credential("facebook", "Babra", "12345")
+         def setUp(self):
+             self.new_credential = credential("facebook", "Babra", "12345")
          def tearDown(self):
              Credential.credential_list = []
-             def test_init(self):
+         def test_init(self):
                  self.assertEqual(self.new_credential.account, "facebook")
                  self.assertEqual(self.new_credential.account_username, "Babra")
                  self.assertEqual(self.new_credential.account_password, "12345")
-             def test_save_credential(self):
+         def test_save_credential(self):
                  self.new_credential.save_credential()
                  self.assertEqual(len(Credential.credential_list), 1)
-             def test_save_multiple_credential(self):
+         def test_save_multiple_credential(self):
                  test_credential = credential("twitter", "Kemei", "0000")
                  test_credential.save_credential()
                  self.assertEqual(len(Credential.credential_list), 2)
-             def 
+         def test_delete_credential(self):
+             self.new_credential.save_credential(self)
+             test_credential = credential("twitter", "Kemei", "0000")
+             test_credential.save_credential()
+
+             self.new_credential.delete_credential()
+             self.assertEqual(len(Credential.credential_list), 1)
     
