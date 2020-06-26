@@ -55,5 +55,14 @@ class TestCredential(unittest.TestCase):
              found_credential = credential.find_by_account_username("Memzo")
              self.assertEqual(found_credential.account_password, test_credential.account_password)
          def test_credential_exists(self)
-         
+             self.new_credential.save_credential()
+             test_credential = Credential("facebook", "Memzo", "3245")
+             test_credential.save_credential()
+             credential_exists = Credential.credential_exists("Memzo")
+             self.assertTrue(test_credential_exists)
+         def test_display_all_credentials(self):
+             self.assertEqual(Credential.display_credentials(),Credential.credential_list)
+
+if _name_ == '_main_':
+    unittest.main()
     
