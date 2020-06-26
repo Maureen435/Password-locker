@@ -1,4 +1,4 @@
-class User
+class User:
       user_list = []
       def _init_(self,user_name,user_password):
           self.user_name = user_name
@@ -8,7 +8,7 @@ class User
       def delete_user(self):
           User.user_list.remove(self)
 
-class Credential    
+class Credential:  
       credential_list = []
       def _init_(self,account,account_username,account_password):
           self.account = account
