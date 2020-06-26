@@ -96,4 +96,18 @@ def main():
                         else:
                             print("The credential does not exist.Try to resign in")
 
-                    elif short_code
+                    elif short_code == "dl":
+                        print("Enter the account username your will like to delete.")
+                        my_delete = input(">")
+                        my_del = find_credential(my_delete)
+                        Credential.credential_list.remove(my_del)
+                        print(f"Credential with account username {my_delete} has been removed successfully")
+
+                    elif short_code == "ex":
+                        print("logged out")
+                        break
+
+            else:
+                print("please check your entry")
+if _name_ == "_main_":
+    main()
