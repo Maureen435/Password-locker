@@ -33,7 +33,7 @@ def main():
     print("\n")
     ask = input(f"Hello {user_name}. Do you have an account? YES/NO >").lower()
     if ask == "no":
-        print(Sign up with password locker to get signed)
+        print("Sign up with password locker to get signed")
         user_name = input("Enter your User name >")
         create = input(
             f"Hello{user_name}.Do you want a generated password? YES/NO >"
@@ -67,7 +67,7 @@ def main():
                            print(f"New Credential {account} {account_username} {account_password} has been created")
                            print("\n")
 
-                    elif short_code == "gp":
+        elif short_code == "gp":
                         print("Please enter the account you want to generate password for > ")
                         social_media = input("Enter account type > ")
 
@@ -77,7 +77,7 @@ def main():
 
                         print(f"Your random password for {social_media} is:", random_password(8))
 
-                    elif short_code == "dc":
+        elif short_code == "dc":
                         if display_credential():
                             print("Here is a list of credentials and password")
                             print("\n")
@@ -85,7 +85,7 @@ def main():
                             print("\n")
                             print("You dont have any saved credential, try saving one")
                             print("\n")
-                    elif short_code == "fc":
+        elif short_code == "fc":
                         print("Enter the account username you are searching")
                         search_account_username = input()
                         if check_existing_credential(search_account_username):
@@ -96,18 +96,18 @@ def main():
                         else:
                             print("The credential does not exist.Try to resign in")
 
-                    elif short_code == "dl":
+        elif short_code == "dl":
                         print("Enter the account username your will like to delete.")
                         my_delete = input(">")
                         my_del = find_credential(my_delete)
                         Credential.credential_list.remove(my_del)
                         print(f"Credential with account username {my_delete} has been removed successfully")
 
-                    elif short_code == "ex":
+        elif short_code == "ex":
                         print("logged out")
                         break
 
-            else:
-                print("please check your entry")
+        else:
+                        print("please check your entry")
 if _name_ == "_main_":
     main()
